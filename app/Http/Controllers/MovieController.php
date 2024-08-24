@@ -22,9 +22,16 @@ class MovieController extends Controller
             'uploads.video_url',
         )
         ->get();
-        return response()->json([
-            'movies' => $movies
-        ]);
+        if($movies){
+            return response()->json([
+                'movies' => $movies
+            ]);
+        }else{
+            return response()->json([
+                'message' => 'Could not found the movies in your database',
+                'status' => 401
+            ], 401);
+        }
     }
     public function MoviePost(Request $request){
         $ajaxJSON = json_decode($request->input('GCP'), true);
@@ -45,7 +52,7 @@ class MovieController extends Controller
         ];
 
         $validate = $request->validate([
-            'title' => 'required',
+            'title' => 'required|unique:movie,title',
             'type' => 'required',
             'release_date' => 'required',
             'description' => 'required',

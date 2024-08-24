@@ -56,18 +56,18 @@
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <form action="{{route('Add_Movie')}}" method="POST" id="AddForm"
-                class="space-y-2 col-span-1 shadow-md shadow-black px-3 text-xs">
+                class="space-y-2 col-span-1 bg-stone-700 px-3 text-xs">
                 @csrf
                 <div class="mb-2">
                     <label for="title" class="block  mb-1">Title</label>
                     <input type="text" id="title" name="title" value="{{ old('title') }}"
-                        class="w-full px-3 py-2 bg-stone-700 text-gray-200 border border-stone-600 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
+                        class="w-full px-3 py-2 bg-stone-800 text-gray-200 border border-stone-600 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
                 </div>
                 <div class="grid grid-cols-2 gap-2">
                     <div class="mb-2">
                         <label for="type" class="block mb-1">Type</label>
                         <select id="type" name="type"
-                            class="w-full px-3 py-2 bg-stone-700 text-gray-200 border border-stone-600 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
+                            class="w-full px-3 py-2 bg-stone-800 text-gray-200 border border-stone-600 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
                             <option value="Movie" {{ old('type') == 'Movie' ? 'selected' : '' }}>Movie</option>
                             <option value="TV Series" {{ old('type') == 'TV Series' ? 'selected' : '' }}>TV Series
                             </option>
@@ -76,23 +76,23 @@
                     <div class="mb-2">
                         <label for="release_date" class="block mb-1">Release Date</label>
                         <input type="date" id="release_date" name="release_date" value="{{ old('release_date') }}"
-                            class="w-full px-3 py-2 bg-stone-700 text-gray-200 border border-stone-600 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
+                            class="w-full px-3 py-2 bg-stone-800 text-gray-200 border border-stone-600 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
                     </div>
                 </div>
                 <div class="mb-2">
                     <label for="description" class="block mb-1">Description</label>
                     <textarea id="description" name="description" rows="3"
-                        class="w-full px-3 py-2 bg-stone-700 text-gray-200 border border-stone-600 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">{{ old('description') }}</textarea>
+                        class="w-full px-3 py-2 bg-stone-800 text-gray-200 border border-stone-600 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">{{ old('description') }}</textarea>
                 </div>
                 <div class="mb-2">
                     <label for="rt_score" class="block mb-1">RT Score</label>
                     <input type="text" id="rt_score" name="rt_score" value="{{ old('rt_score') }}"
-                        class="w-full px-3 py-2 bg-stone-700 text-gray-200 border border-stone-600 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
+                        class="w-full px-3 py-2 bg-stone-800 text-gray-200 border border-stone-600 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
                 </div>
                 <div class="mb-2">
                     <label for="genre" class="block mb-1">Selected GCP</label>
                     <div title="Genre | Country | Cast"
-                        class="G_C_P bg-stone-700 p-2 h-36 max-h-36 overflow-x-hidden overflow-y-auto scrollbar text-xs text-gray-200 text-center rounded flex flex-col gap-1.5">
+                        class="G_C_P bg-stone-800 p-2 h-36 max-h-36 overflow-x-hidden overflow-y-auto scrollbar text-xs text-gray-200 text-center rounded flex flex-col gap-1.5">
                         <!-- Genre | Country | Production -->
                     </div>
                 </div>

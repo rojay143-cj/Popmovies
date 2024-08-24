@@ -38,7 +38,7 @@ $(function () {
     });
 });
 
-// SIDE-BAR OPTIONS
+// SIDE-BAR OPTIONS - CJ
 $(document).ready(function () {
     var TEAM = localStorage.getItem("TEAM") === "true";
     var COUNTRY = localStorage.getItem("COUNTRY") === "true";
@@ -138,7 +138,7 @@ $(document).ready(function () {
     });
 });
 
-// Add Production Modal
+// Add Production Modal - CJ
 $(function () {
     const addrole = $(".btn-add_role");
     const exitAdd = $(".close-modal");
@@ -160,7 +160,7 @@ $(function () {
     });
 });
 
-// Delete Production Modal & Edit modal
+// Delete Production Modal & Edit modal - CJ
 $(document).ready(function () {
     $('button[class^="btn-edit_cast"]').on("click", function () {
         let prod_id = $(this).val();
@@ -172,7 +172,7 @@ $(document).ready(function () {
     });
 });
 
-// Add Country Modal
+// Add Country Modal - CJ
 $(function () {
     const addrole = $(".btn-add_country");
     const exitAdd = $(".close-modal");
@@ -194,7 +194,7 @@ $(function () {
     });
 });
 
-// Delete Country Modal & Edit modal
+// Delete Country Modal & Edit modal - CJ
 $(document).ready(function () {
     $('button[class^="btn-edit_country"]').on("click", function () {
         let country_id = $(this).val();
@@ -206,7 +206,7 @@ $(document).ready(function () {
     });
 });
 
-// Add Genre Modal
+// Add Genre Modal - CJ
 $(function () {
     const addrole = $(".btn-add_genre");
     const exitAdd = $(".close-modal");
@@ -228,7 +228,7 @@ $(function () {
     });
 });
 
-// Delete Genre Modal & Edit modal
+// Delete Genre Modal & Edit modal - CJ
 $(document).ready(function () {
     $('button[class^="btn-edit_genre]').on("click", function () {
         let genre_id = $(this).val();
@@ -240,7 +240,7 @@ $(document).ready(function () {
     });
 });
 
-// Add Movie Modal
+// Add Movie Modal - CJ
 $(function () {
     const addrole = $(".btn-add_movie");
     const exitAdd = $(".close-modal");
@@ -262,7 +262,7 @@ $(function () {
     });
 });
 
-// Delete Movie Modal & Edit modal
+// Delete Movie Modal & Edit modal - CJ
 $(document).ready(function () {
     let btn_edit = $('button[id^="btn-edit_movie_"]');
     let btn_delete = $('button[id^="btn-delete_movie_"]');
@@ -276,8 +276,22 @@ $(document).ready(function () {
     });
 });
 
-// Whole Movie page codes
+// Whole Movie page codes - CJ
 $(document).ready(function () {
+    // Search for movie Cast - CJ
+    function searchCast(input, cast_name) {
+        input.on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            cast_name.filter(function () {
+                $(this).toggle(
+                    $(this).text().toLowerCase().indexOf(value) > -1
+                );
+            });
+        });
+    }
+    searchCast($(".append_search"), $(".cast_names li"));
+
+    // Append GCP to the DIV - CJ
     let append_team = $('button[id^="append_team_"]');
     let append_genre = $('button[id^="append_genre_"]');
     let append_country = $('button[id^="append_country_"]');
@@ -289,11 +303,14 @@ $(document).ready(function () {
         team: new Set(),
     };
 
-    // Function to add item to GCP and handle duplicates
-    function handleAdd(item_name, bgColor, textColor, category) {
+    // Function to add item to GCP and handle duplicates - CJ
+    function handleAdd(item_name, bgColor, textColor, category, clear) {
         if (!categorizeGCP[category].has(item_name)) {
             GCP.append(
-                `<p title="${category}" class="p-1 ${bgColor} shadow-sm ${textColor}">${item_name}</p>`
+                `<p title="${category}" class="item p-1 relative ${bgColor} shadow-sm ${textColor}" style="position: relative; padding-right: 20px;">
+            ${item_name}
+            <button type="button" title="Remove ${item_name}?" class="remove_gcp absolute right-0" style="right: 5px; top: 50%; transform: translateY(-50%);">${clear}</button>
+        </p>`
             );
             categorizeGCP[category].add(item_name);
             $(".error").text("").hide();
@@ -302,33 +319,31 @@ $(document).ready(function () {
                 .text(`${item_name} already exists in ${category}`)
                 .show();
         }
-    }
-
-    function searchCast(input, cast_name){
-        input.on('keyup', function () {
-            var value = $(this).val().toLowerCase();
-            cast_name.filter(function(){
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
+        $(document).on('click','.remove_gcp' ,function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const item = $(this).closest('.item').text().trim();
+            categorizeGCP[category].delete(item);
+            $(this).parent().remove();
         });
     }
-    searchCast($('.append_search'), $('.cast_names li'));
 
     append_team.click(function () {
         let prod_name = $(this).closest("li").text().trim();
-        handleAdd(prod_name, "bg-gray-300", "text-zinc-800", "team");
+        handleAdd(prod_name, "bg-gray-300", "text-zinc-800", "team", '<i class="fa-solid fa-minus fa-xl"></i>');
     });
 
     append_genre.click(function () {
         let genre_name = $(this).closest("li").text().trim();
-        handleAdd(genre_name, "bg-red-600", "text-gray-300", "genre");
+        handleAdd(genre_name, "bg-red-600", "text-gray-300", "genre", '<i class="fa-solid fa-minus fa-xl"></i>');
     });
 
     append_country.click(function () {
         let country_name = $(this).closest("li").text().trim();
-        handleAdd(country_name, "bg-yellow-600", "text-gray-300", "country");
+        handleAdd(country_name, "bg-yellow-600", "text-gray-300", "country", '<i class="fa-solid fa-minus fa-xl"></i>');
     });
-    // Add Movies
+    // Add Movies - CJ
     $("#btn_save").on("click", function (e) {
         e.preventDefault();
 
@@ -373,7 +388,7 @@ $(document).ready(function () {
             },
         });
     });
-    // Fetch Movies
+    // Fetch Movies - CJ
     getMovies();
     function getMovies() {
         $.ajax({
@@ -381,37 +396,39 @@ $(document).ready(function () {
             method: "GET",
             dataType: "json",
             success: function (response) {
-                $("#DT_movie").html("");
+                let table = $("#movie").DataTable();
+                table.clear();
                 $.each(response.movies, function (key, movie) {
-                    $("#DT_movie").append(`
-                        <tr>
-                        <td class="px-4 py-2">
-                            <img src="${movie.poster_url}" alt="${movie.title}" class="rounded-sm object-cover w-20 h-28">
-                        </td>
-                        <td class="py-2 px-1 border-b border-stone-600">${movie.title}</td>
-                        <td class="py-2 px-1 border-b border-stone-600">${movie.type}</td>
-                        <td class="py-2 px-1 border-b border-stone-600">${movie.release_date}</td>
-                        <td class="py-2 px-1 border-b border-stone-600">${movie.rt_score}</td>
-                        <td class="p-2 px-1 text-center border-b border-stone-600">
-                            <button type="button" value="${movie.movie_id}" data-title="${movie.title}" class="btn-edit_movie text-blue-500 hover:text-blue-700">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                            </button>
-                            <button type="button" value="${movie.movie_id}" data-title="${movie.title}" class="btn-delete_movie text-red-500 hover:text-red-700 ml-2">
-                                <i class="fa-regular fa-trash-can"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    `);
+                    table.row.add([
+                        `<td class="px-4 py-2 hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">
+                        <img src="${movie.poster_url}" alt="${movie.title}" class="rounded-sm object-cover w-20 h-28">
+                    </td>`,
+                        `<td class="py-2 px-1 hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">${movie.title}</td>`,
+                        `<td class="py-2 px-1 hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">${movie.type}</td>`,
+                        `<td class="py-2 px-1 hover:bg-stone-900 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">${movie.release_date}</td>`,
+                        `<td class="py-2 px-1 hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">${movie.rt_score}</td>`,
+                        `<td class="p-2 px-1 text-center hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-b border-stone-600">
+                        <button type="button" value="${movie.movie_id}" data-title="${movie.title}" class="btn-edit_movie text-yellow-600 hover:text-yellow-500">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </button>
+                        <button type="button" value="${movie.movie_id}" data-title="${movie.title}" class="btn-delete_movie text-red-500 hover:text-red-700 ml-2">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </td>`,
+                    ]);
                 });
+                table.draw();
             },
             error: function (error) {
                 let errorMessage =
                     error.responseJSON?.message ||
-                    "An unexpected error occured during the execution.";
+                    "An unexpected error occurred during the execution.";
                 $(".error").text(errorMessage).show();
             },
         });
     }
+
+    // Append Modal when Clicked popmovies - CJ
     $(document).on("click", ".btn-delete_movie", function (e) {
         e.stopPropagation();
         let movie_id = $(this).val();
@@ -450,34 +467,36 @@ $(document).ready(function () {
         `);
         $(`.modal-delete_movie_${movie_id}`).fadeIn(300);
     });
-    function deleteModal() {
-        $("#delete_movies").animate({ opacity: 0 }, 300, function () {
+    // Delete movie modal function - CJ
+    function deleteModal(MovieModal) {
+        MovieModal.animate({ opacity: 0 }, 300, function () {
             $(this).empty();
             $(this).css({ opacity: 1 });
         });
     }
-    
+
+    // Delete movie function - CJ
     function deleteMovie() {
-        let movie_id = $('.delete_movie').val();
+        let movie_id = $(".delete_movie").val();
         $.ajax({
             url: "/Pop Admin Panel/DeleteMovie",
             method: "POST",
             data: { movie_id },
             success: function (response) {
-                deleteModal();
+                deleteModal($("#delete_movies"));
             },
             error: function (jqXHR) {
                 console.log(jqXHR);
             },
         });
     }
-    
+
     $(document).on("click", ".delete_movie", function () {
         deleteMovie();
         getMovies();
     });
-    
+
     $(document).on("click", ".close-deletemodal", function () {
-        deleteModal();
+        deleteModal($("#delete_movies"));
     });
 });

@@ -39,7 +39,8 @@ Route::group(['middleware' => 'check_login'], function () {
     
     // Movie Routes
     Route::get('/Pop Admin Panel/fetchmovies',[MovieController::class, 'GetMovies'])->name('DT_movies');
+    Route::post('/Pop Admin Panel/fetchedittomovie',[MovieController::class, 'GetEditMovie'])->name('get_edit_movie');
     Route::post('/Pop Admin Panel/AddMovie', [MovieController::class, 'MoviePost'])->name('Add_Movie');
-    Route::post('/Pop Admin Panel/EditMovie{movieid}', [MovieController::class, 'EditMovie'])->name('Edit_Movie');
+    Route::post('/Pop Admin Panel/EditMovie', [MovieController::class, 'EditMovie'])->name('Edit_Movie');
     Route::post('/Pop Admin Panel/DeleteMovie', [MovieController::class, 'DeleteMovie'])->name('Delete_Movie');
 });

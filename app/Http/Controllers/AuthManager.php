@@ -63,7 +63,7 @@ class AuthManager extends Controller
                     return redirect()->intended(route('Admin_Dashboard'));
                 case 100:
                 case 10:
-                    return redirect()->intended(route('User_Dashboard'));
+                    return redirect()->intended(route('homepage'));
                 default:
                     return abort(403, 'Unauthorized Access.');
             }

@@ -146,36 +146,10 @@
     </div>
     <div class="absolute inset-0 bg-stone-800 opacity-50 z-10"></div>
 </div>
-<div class="modal-edit_movie closeedit fixed inset-0 flex items-center justify-center z-30" style="display: none">
-    <div class="modal-content bg-stone-900 text-gray-200 rounded-lg shadow-lg w-[25rem] relative p-6 z-20">
-        <div class="modal-header flex justify-between items-center mb-6">
-            <h4 class="modal-title text-lg font-semibold tracking-widest">Edit - </h4>
-            <button type="button" class="close-editmodal text-gray-400 hover:text-gray-200">
-                <i class="fa-solid fa-xmark text-xl"></i>
-            </button>
-        </div>
-        <form action="" method="POST" class="space-y-4">
-            @csrf
-            <div class="modal-body">
-                <div class="text-xs mb-3">
-                    <label for="name" class="block  mb-1">movie</label>
-                    <input type="text" id="name" name="movie_name" value="{{old('name')}}"
-                        class="w-full px-3 py-2 bg-stone-700 text-gray-200 border border-stone-600 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
-                </div>
-            </div>
-            <div class="modal-footer flex justify-end space-x-3 mt-6">
-                <button type="button"
-                    class="close-editmodal px-4 py-2 bg-gray-600 text-sm text-gray-200 rounded hover:bg-gray-500 focus:outline-none">
-                    Cancel
-                </button>
-                <button type="submit" name="save_movie"
-                    class="btn-save px-4 py-2 bg-yellow-700 text-sm text-gray-200 rounded hover:bg-yellow-600 focus:outline-none">
-                    Save
-                </button>
-            </div>
-        </form>
-    </div>
-    <div class="absolute inset-0 bg-slate-800 opacity-50 z-10"></div>
+<div>
+    <form action="{{route('Edit_Movie')}}" method="POST" id="edit_movies">
+
+    </form>
 </div>
 <div>
     <form action="{{route('Delete_Movie')}}" method="POST" id="delete_movies">

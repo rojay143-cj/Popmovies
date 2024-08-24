@@ -319,11 +319,11 @@ $(document).ready(function () {
                 .text(`${item_name} already exists in ${category}`)
                 .show();
         }
-        $(document).on('click','.remove_gcp' ,function(e) {
+        $(document).on("click", ".remove_gcp", function (e) {
             e.preventDefault();
             e.stopPropagation();
-            
-            const item = $(this).closest('.item').text().trim();
+
+            const item = $(this).closest(".item").text().trim();
             categorizeGCP[category].delete(item);
             $(this).parent().remove();
         });
@@ -331,17 +331,35 @@ $(document).ready(function () {
 
     append_team.click(function () {
         let prod_name = $(this).closest("li").text().trim();
-        handleAdd(prod_name, "bg-gray-300", "text-zinc-800", "team", '<i class="fa-solid fa-minus fa-xl"></i>');
+        handleAdd(
+            prod_name,
+            "bg-gray-300",
+            "text-zinc-800",
+            "team",
+            '<i class="fa-solid fa-minus fa-xl"></i>'
+        );
     });
 
     append_genre.click(function () {
         let genre_name = $(this).closest("li").text().trim();
-        handleAdd(genre_name, "bg-red-600", "text-gray-300", "genre", '<i class="fa-solid fa-minus fa-xl"></i>');
+        handleAdd(
+            genre_name,
+            "bg-red-600",
+            "text-gray-300",
+            "genre",
+            '<i class="fa-solid fa-minus fa-xl"></i>'
+        );
     });
 
     append_country.click(function () {
         let country_name = $(this).closest("li").text().trim();
-        handleAdd(country_name, "bg-yellow-600", "text-gray-300", "country", '<i class="fa-solid fa-minus fa-xl"></i>');
+        handleAdd(
+            country_name,
+            "bg-yellow-600",
+            "text-gray-300",
+            "country",
+            '<i class="fa-solid fa-minus fa-xl"></i>'
+        );
     });
     // Add Movies - CJ
     $("#btn_save").on("click", function (e) {
@@ -428,7 +446,26 @@ $(document).ready(function () {
         });
     }
 
-    // Append Modal when Clicked popmovies - CJ
+    // Append movie's modal edit when Clicked Popmovies - CJ
+    $(document).on("click", ".btn-edit_movie", function (e) {
+        e.stopPropagation();
+        let movie_id = $(this).val();
+        let movie_title = $(this).data("title");
+        
+        $.ajax({
+            url: '/Pop Admin Panel/fetchedittomovie',
+            method: 'POST',
+            data: {movie_id},
+            success: function(response){
+                console.log(response);
+            },
+            error: function(jqXHR){
+                console.log(jqXHR);
+            }
+        });
+    });
+
+    // Append movie's modal delete when Clicked popmovies - CJ
     $(document).on("click", ".btn-delete_movie", function (e) {
         e.stopPropagation();
         let movie_id = $(this).val();

@@ -98,6 +98,25 @@ class MovieController extends Controller
             return "A new movie { $movie->title } has been added successfully.";
         }
     }
+
+    function GetEditMovie(Request $request){
+        $movie_id = json_decode($request->movie_id, true);
+
+        $fetcheditmovie = DB::table('movie')
+        ->join('moviegenre','movie.movie_id','=','moviegenre.movie_id')
+        ->join('genre', 'moviegenre.genre_id', '=', 'genre.genre_id')
+        ->where('movie.movie_id',$movie_id)
+        ->select('genre.*','moviegenre.genre_id')
+        ->select('movie.*','moviegenre.genre_id')
+        ->get();
+
+        $result = [
+            'movie' => $fetcheditmovie->first(),
+            'genres' => $fetcheditmovie->pluck('genre_name')
+        ];
+        return $result;
+    }
+
     function DeleteMovie(Request $request){
         $movie_id = json_decode($request->movie_id,true);
         $delete_movie = DB::table('movie')

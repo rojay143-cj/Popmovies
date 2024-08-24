@@ -1,0 +1,131 @@
+{
+    "After": {
+        "Title": "After",
+        "Img": "assets/movies/after.jpg",
+        "Text": "Tessa Young is a dedicated student, dutiful daughter, and loyal girlfriend to her high school sweetheart. Entering her first semester of college, Tessa's guarded world opens up when she meets the dark and mysterious Hardin Scott, a magnetic, brooding rebel who makes her question all she thought she knew about herself—and what she wants out of life.",
+        "Date": "April 12, 2019",
+        "Type": "Movie",
+        "Duration": "95min"
+    },
+    "Aladdin": {
+        "Title": "Aladdin",
+        "Img": "assets/movies/aladdin.jpg",
+        "Text": "A kind-hearted street urchin named Aladdin embarks on a magical adventure after finding a lamp that releases a wisecracking genie. With the genie’s help, Aladdin sets out to win the heart of Princess Jasmine and stop the power-hungry sorcerer Jafar from taking over the kingdom.",
+        "Date": "May 24, 2019",
+        "Type": "Movie",
+        "Duration": "174min"
+    },
+    "I Am Number Four": {
+        "Title": "I Am Number Four",
+        "Img": "assets/movies/i_am_number_four.jpg",
+        "Text": "John Smith is an extraordinary teen, masking his true identity as he and his guardian Henri move from town to town. But with each passing day, John gains more control over his newfound powers and discovers he is being hunted by a deadly enemy sent to destroy him. As he uncovers his destiny, John must learn to fight to protect those he loves and discover the truth about his alien origins.",
+        "Date": "February 18, 2011",
+        "Type": "Movie",
+        "Duration": "105min"
+    },
+    "Jaws": {
+        "Title": "Jaws",
+        "Img": "assets/movies/jaws.webp",
+        "Text": "When a young woman is killed by a shark while swimming near the small island community of Amity, the local police chief, a marine biologist, and an old seafarer set out to stop the great white shark from terrorizing the town. The movie is a suspenseful thriller that kept audiences on the edge of their seats, making it a classic in film history.",
+        "Date": "June 20, 1975",
+        "Type": "Movie",
+        "Duration": "95min"
+    },
+    "Never Be Alone": {
+        "Title": "Never Be Alone",
+        "Img": "assets/movies/never_be_alone.webp",
+        "Text": "A group of friends discovers a mysterious game that claims to grant wishes, but the wishes come at a deadly cost. As they play the game, they begin to realize that the consequences are far more dangerous than they could have imagined, forcing them to fight for their lives.",
+        "Date": "2020",
+        "Type": "Movie",
+        "Duration": "99min"
+    },
+    "Parasyte": {
+        "Title": "Parasyte",
+        "Img": "assets/movies/parasyte.jpg",
+        "Text": "A high school student named Shinichi Izumi is one of the many humans who are infected by parasitic aliens that take over their bodies. Unlike others, Shinichi's parasite only partially takes over, leaving him with control of his body but with the parasite in his hand. Together, they must fight off other parasites and survive in a world where they are the hunted.",
+        "Date": "November 29, 2014",
+        "Type": "Movie",
+        "Duration": "159min"
+    },
+    "Wake Wood": {
+        "Title": "Wake Wood",
+        "Img": "assets/movies/wake_wood.jpg",
+        "Text": "After the tragic death of their daughter, a grieving couple relocates to a small village, where they discover a pagan ritual that allows them to bring their daughter back to life for three days. As they delve deeper into the ritual, they must confront the consequences of their actions and the dark secrets of the village.",
+        "Date": "March 25, 2011",
+        "Type": "Movie",
+        "Duration": "90min"
+    },
+    "Wood": {
+        "Title": "Wood",
+        "Img": "assets/movies/wood.webp",
+        "Text": "Three childhood friends reunite for a weekend of fun and relaxation in the woods. However, their peaceful retreat turns into a nightmare when they encounter mysterious and supernatural events that force them to confront their deepest fears and secrets.",
+        "Date": "2018",
+        "Type": "Movie",
+        "Duration": "79min"
+    }
+    
+    ,"Angel Has Fallen":{
+        "Title": "Angel Has Fallen",
+        "Img": "assets/movies/angel_has_fallen.jpg",
+        "Text": "Authorities take Secret Service agent Mike Banning into custody for the failed assassination attempt of U.S. President Allan Trumbull. After escaping from his captors, Banning must evade the FBI and his own agency to find the real threat to the president. Desperate to uncover the truth, he soon turns to unlikely allies to help clear his name and save the country from imminent danger.",
+        "Date": "August 23, 2019",
+        "Type": "Movie",
+        "Duration": "128min"
+    },
+    "Iron Man 3":{
+        "Title": "Iron Man 3",
+        "Img": "assets/movies/iron_man_3_poster.webp",
+        "Text": "When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution. When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.",
+        "Date": "April 24, 2013",
+        "Type": "Movie",
+        "Duration": "123min"
+    },
+    "Underworld Awakening":{
+        "Title": "Underworld Awakening",
+        "Img": "assets/movies/underworld_awakening.jpg",
+        "Text": "In the years since she and her human-lycan lover, Michael, defeated Elder Marcus, vampire warrior Selene (Kate Beckinsale) has been taken captive by humans, while they wage an all-out war against both lycans and vampires. Awakening after more than a decade, Selene discovers that Michael is dead, but that she has given birth to his daughter, Eve. Shunned by nearly all surviving vampires, save one (Theo James), even Selene seems powerless against her latest opponent: a genetically enhanced lycan.",
+        "Date": "January 20, 2012",
+        "Type": "Movie",
+        "Duration": "145min"
+    },
+    "Justice League":{
+        "Title": "Justice League",
+        "Img": "assets/movies/justice_legue.jpeg",
+        "Text": "The Justice League is an organization comprised of the world's greatest superheroes. Together, they operate as a team dedicated to fighting crime and injustice, and act as Earth's first line of defense from terrestrial, extra-terrestrial and inter-dimensional threats. And The Justice League is an all-star ensemble cast of established superhero characters from DC Comics' portfolio. Diegetically, these superheroes usually operate independently but occasionally assemble as a team to tackle especially formidable villains.",
+        "Date": "November 16, 2017",
+        "Type": "Movie",
+        "Duration": "127min"
+    },
+    "Cowboys & Aliens":{
+        "Title": "Cowboys & Aliens",
+        "Img": "assets/movies/cow_boys_&_aliens.jpg",
+        "Text": "Bearing a mysterious metal shackle on his wrist, an amnesiac gunslinger (Daniel Craig) wanders into a frontier town called Absolution. He quickly finds that strangers are unwelcome, and no one does anything without the approval of tyrannical Col. Dolarhyde (Harrison Ford). But when Absolution faces a threat from beyond Earth, the stranger finds that he is its only hope of salvation. He unites townspeople, outlaws and Apache warriors against the alien forces in an epic battle for survival.",
+        "Date": "August 10, 2011",
+        "Type": "Movie",
+        "Duration": "107min"
+    },
+    "Spiderman Home Coming": {
+        "Title": "Spiderman Home Coming",
+        "Img": "assets/movies/spider_man_home_coming.jpg",
+        "Text": "Tessa Young is a dedicated student, dutiful daughter, and loyal girlfriend to her high school sweetheart. Entering her first semester of college, Tessa's guarded world opens up when she meets the dark and mysterious Hardin Scott, a magnetic, brooding rebel who makes her question all she thought she knew about herself—and what she wants out of life.",
+        "Date": "April 12, 2019",
+        "Type": "Movie",
+        "Duration": "95min"
+    },
+    "Flavors of Youth": {
+        "Title": "Flavors of Youth",
+        "Img": "assets/movies/Flavors_of_Youth_poster.jpeg",
+        "Text": "Three stories of youth from different cities in China: memories locked in a bowl of steaming noodles, a fading beauty discovering her way, and a bittersweet first love.",
+        "Date": "August 4, 2018",
+        "Type": "Movie",
+        "Duration": "75min"
+    },
+    "Suzume": {
+        "Title": "Suzume",
+        "Img": "assets/movies/suzume.jpg",
+        "Text": "As the skies turn red and the planet trembles, Japan stands on the brink of disaster. However, a determined teenager named Suzume sets out on a mission to save her country. Able to see supernatural forces that others cannot, it's up to her to close the mysterious doors that are spreading chaos across the land. A perilous journey awaits as the fate of Japan rests on her shoulders.",
+        "Date": "November 11, 2022",
+        "Type": "Movie",
+        "Duration": "122min"
+    }
+}

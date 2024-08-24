@@ -1,0 +1,82 @@
+{
+    "Fallout": {
+        "Title": "Fallout",
+        "Img": "assets/movies/fallout.jpg",
+        "Text": "An adaptation that feels like a true extension of the games, Fallout is a post-apocalyptic blast for newcomers and longtime fans alike. Set in a world ravaged by nuclear war, the series follows various characters as they navigate the harsh, mutated landscape, fighting for survival and uncovering the dark secrets of the wasteland.",
+        "Date": "April 10, 2024",
+        "Type": "TV Series",
+        "Duration": "TBD"
+    },
+    "Sweet Home 3": {
+        "Title": "Sweet Home 3",
+        "Img": "assets/movies/sweethome3.jpg",
+        "Text": "The third and final season of this dystopian monster saga continues the story of survivors in a stadium turned safe haven, battling against horrifying creatures and facing their own inner demons. With high stakes and intense emotional drama, this season promises to conclude the gripping tale with a powerful finale.",
+        "Date": "July 19, 2024",
+        "Type": "TV Series",
+        "Duration": "TBD"
+    },
+    "Red Swan": {
+        "Title": "Red Swan",
+        "Img": "assets/movies/redswan.jpg",
+        "Text": "In this action-packed thriller, bodyguard Do-yoon, played by Rain, takes on a job protecting a former pro golfer who runs a charity foundation. As he gets closer to his goal, dark secrets about the powerful family he works for start to unravel, leading to a deadly game of cat and mouse.",
+        "Date": "July 3, 2024",
+        "Type": "TV Series",
+        "Duration": "TBD"
+    },
+    "The Auditors": {
+        "Title": "The Auditors",
+        "Img": "assets/movies/theauditors.jpg",
+        "Text": "This corporate drama dives into the high-stakes world of auditing, where Shin Cha-il, the fearsome leader of an audit team, faces off against corruption within a powerful company. As he navigates a treacherous corporate landscape, he must deal with internal conflicts, ambitious colleagues, and the heavy burden of uncovering the truth.",
+        "Date": "July 6, 2024",
+        "Type": "TV Series",
+        "Duration": "TBD"
+    },
+    "Serendipity's Embrace": {
+        "Title": "Serendipity's Embrace",
+        "Img": "assets/movies/serendipitysembrace.jpg",
+        "Text": "Based on a popular webtoon, this romantic drama tells the story of Lee Hong-ju, an animation producer who reunites with her first love, Kang Hu-young, after a decade. As they rekindle their relationship, they must confront the unresolved emotions and missed opportunities from their past.",
+        "Date": "July 15, 2024",
+        "Type": "TV Series",
+        "Duration": "TBD"
+    },
+    "Oshi no Ko": {
+        "Title": "Oshi no Ko",
+        "Img": "assets/movies/oshinoko.jpg",
+        "Text": "This anime blends the world of idol culture with a gripping mystery. It follows the story of Aqua and Ruby, two children born with a mysterious connection to a famous idol. As they navigate the entertainment industry, they uncover dark secrets and face the challenges of fame.",
+        "Date": "April 2024",
+        "Type": "TV Series",
+        "Duration": "TBD"
+    },
+    "Queen of Tears": {
+        "Title": "Queen of Tears",
+        "Img": "assets/movies/queenoftears.jpg",
+        "Text": "A romantic comedy-drama that follows a married couple who are polar opposites. Through a series of humorous and heartwarming events, they learn to appreciate each other’s differences and rediscover the love that brought them together in the first place.",
+        "Date": "June 2024",
+        "Type": "TV Series",
+        "Duration": "TBD"
+    },
+    "Doctor Who": {
+        "Title": "Doctor Who (2024 Season)",
+        "Img": "assets/movies/doctorwho.jpg",
+        "Text": "The long-running British sci-fi series returns with Ncuti Gatwa as the new Doctor. This season promises fresh adventures across time and space, with the Doctor facing new and old enemies while exploring the mysteries of the universe.",
+        "Date": "November 2024",
+        "Type": "TV Series",
+        "Duration": "TBD"
+    },
+    "Attack on Titan: The Final Season - Part 4": {
+        "Title": "Attack on Titan: The Final Season - Part 4",
+        "Img": "assets/movies/attackontitan.jpg",
+        "Text": "The epic conclusion to the Attack on Titan saga, where the fate of humanity hangs in the balance. Eren, Mikasa, and Armin face their final battles, with the truth of the Titans finally revealed in a heart-stopping climax.",
+        "Date": "March 2024",
+        "Type": "TV Series",
+        "Duration": "TBD"
+    },
+    "The Acolyte": {
+        "Title": "The Acolyte",
+        "Img": "assets/movies/theacolyte.jpg",
+        "Text": "Set in the Star Wars universe, this prequel series explores the dark side of the Force during the final days of the High Republic era. With a focus on emerging Sith powers and the mysteries of the galaxy, it’s a visually stunning and narratively rich addition to the Star Wars canon.",
+        "Date": "May 2024",
+        "Type": "TV Series",
+        "Duration": "TBD"
+    }
+}

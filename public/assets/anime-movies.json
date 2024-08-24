@@ -1,0 +1,82 @@
+{
+    "The Tunnel to Summer, the Exit of Goodbyes": {
+        "Title": "The Tunnel to Summer, the Exit of Goodbyes",
+        "Img": "assets/movies/tunneltosummer.jpg",
+        "Text": "Based on the award-winning light novel, this film tells the story of two high school students who discover a mysterious tunnel that can grant their deepest wishes—but at a great cost. As they explore its depths, they must confront their pasts and the choices they wish they could change.",
+        "Date": "September 15, 2023",
+        "Type": "Anime Movie",
+        "Duration": "84min"
+    },
+    "Spy x Family: Code: White": {
+        "Title": "Spy x Family: Code: White",
+        "Img": "assets/movies/spyxfamily.jpg",
+        "Text": "The first movie from the wildly popular Spy x Family franchise, 'Code: White' sees the Forgers embarking on a new, high-stakes mission that could either bring them closer together as a family or tear them apart. Expect a mix of thrilling action, comedy, and heartwarming moments.",
+        "Date": "December 22, 2023",
+        "Type": "Anime Movie",
+        "Duration": "TBD"
+    },
+    "The First Slam Dunk": {
+        "Title": "The First Slam Dunk",
+        "Img": "assets/movies/firstslamdunk.jpg",
+        "Text": "A cinematic adaptation of the classic sports manga, 'The First Slam Dunk' brings the excitement of high school basketball to the big screen. With intense matches and the personal growth of its characters, this movie is a must-watch for sports anime fans.",
+        "Date": "August 2023",
+        "Type": "Anime Movie",
+        "Duration": "124min"
+    },
+    "Suzume": {
+        "Title": "Suzume",
+        "Img": "assets/movies/suzume.jpg",
+        "Text": "Directed by Makoto Shinkai, 'Suzume' follows the journey of a young girl who must close mysterious doors that are causing disasters across Japan. The movie is visually stunning and emotionally resonant, exploring themes of loss, resilience, and hope.",
+        "Date": "April 14, 2023",
+        "Type": "Anime Movie",
+        "Duration": "121min"
+    },
+    "Blue Giant": {
+        "Title": "Blue Giant",
+        "Img": "assets/movies/bluegiant.jpg",
+        "Text": "An adaptation of the critically acclaimed manga, 'Blue Giant' tells the story of a young man who dreams of becoming the world’s greatest jazz musician. With a powerful soundtrack and inspiring narrative, this film celebrates the passion and dedication of musicians.",
+        "Date": "September 2023",
+        "Type": "Anime Movie",
+        "Duration": "120min"
+    },
+    "Black Clover: Sword of the Wizard King": {
+        "Title": "Black Clover: Sword of the Wizard King",
+        "Img": "assets/movies/blackclover.jpg",
+        "Text": "This original story set in the Black Clover universe sees Asta and the Magic Knights facing off against a former Wizard King who has returned to reclaim his throne. Packed with action and intense battles, this movie expands the lore of the series.",
+        "Date": "June 16, 2023",
+        "Type": "Anime Movie",
+        "Duration": "110min"
+    },
+    "Psycho-Pass: Providence": {
+        "Title": "Psycho-Pass: Providence",
+        "Img": "assets/movies/psychopass.jpg",
+        "Text": "The latest entry in the 'Psycho-Pass' franchise, 'Providence' delves deeper into the dystopian world of the Sybil System. With new mysteries to unravel and old enemies to face, this film is a gripping continuation for fans of the series.",
+        "Date": "May 12, 2023",
+        "Type": "Anime Movie",
+        "Duration": "TBD"
+    },
+    "To Every You I've Loved Before / To Me, The One Who Loved You": {
+        "Title": "To Every You I've Loved Before / To Me, The One Who Loved You",
+        "Img": "assets/movies/toeveryyou.jpg",
+        "Text": "These two interconnected films explore alternate realities and the different paths love can take. A unique and thought-provoking exploration of parallel universes, these movies challenge the notion of destiny and what it means to love someone.",
+        "Date": "October 7, 2022",
+        "Type": "Anime Movie",
+        "Duration": "98min (each film)"
+    },
+    "Mobile Suit Gundam: Cucuruz Doan's Island": {
+        "Title": "Mobile Suit Gundam: Cucuruz Doan's Island",
+        "Img": "assets/movies/gundamcucuruz.jpg",
+        "Text": "A retelling of a classic episode from the original 'Mobile Suit Gundam' series, this movie dives into the story of Cucuruz Doan, a former Zeon soldier who chose to live in peace. The film explores themes of war, peace, and the cost of human life.",
+        "Date": "2023",
+        "Type": "Anime Movie",
+        "Duration": "108min"
+    },
+    "That Time I Got Reincarnated as a Slime: Scarlet Bond": {
+        "Title": "That Time I Got Reincarnated as a Slime: Scarlet Bond",
+        "Img": "assets/movies/tensura.jpg",
+        "Text": "Rimuru and his friends embark on a new adventure in this original movie set in the world of 'That Time I Got Reincarnated as a Slime'. With a new enemy threatening the peace, this film brings the beloved characters back for more action-packed fun.",
+        "Date": "January 20, 2023",
+        "Type": "Anime Movie",
+        "Duration": "112min"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "Iron Man 3":{
+        "Title": "Iron Man 3",
+        "Img": "assets/movies/ironman3.jpg",
+        "Text": "When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution. When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.",
+        "Date": "April 24, 2013"
+    },
+    "Justice League":{
+        "Title": "Justice League",
+        "Img": "assets/movies/JL_cover.jpg",
+        "Text": "The Justice League is an organization comprised of the world's greatest superheroes. Together, they operate as a team dedicated to fighting crime and injustice, and act as Earth's first line of defense from terrestrial, extra-terrestrial and inter-dimensional threats. And The Justice League is an all-star ensemble cast of established superhero characters from DC Comics' portfolio. Diegetically, these superheroes usually operate independently but occasionally assemble as a team to tackle especially formidable villains.",
+        "Date": "November 16, 2017"
+    },
+    "Angel Has Fallen":{
+        "Title": "Angel Has Fallen",
+        "Img": "assets/movies/AHF.webp",
+        "Text": "Authorities take Secret Service agent Mike Banning into custody for the failed assassination attempt of U.S. President Allan Trumbull. After escaping from his captors, Banning must evade the FBI and his own agency to find the real threat to the president. Desperate to uncover the truth, he soon turns to unlikely allies to help clear his name and save the country from imminent danger.",
+        "Date": "August 23, 2019"
+    },
+    "Underworld Awakening":{
+        "Title": "Underworld Awakening",
+        "Img": "assets/movies/UA.jpg",
+        "Text": "In the years since she and her human-lycan lover, Michael, defeated Elder Marcus, vampire warrior Selene (Kate Beckinsale) has been taken captive by humans, while they wage an all-out war against both lycans and vampires. Awakening after more than a decade, Selene discovers that Michael is dead, but that she has given birth to his daughter, Eve. Shunned by nearly all surviving vampires, save one (Theo James), even Selene seems powerless against her latest opponent: a genetically enhanced lycan.",
+        "Date": "January 20, 2012"
+    }
+}

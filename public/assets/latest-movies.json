@@ -1,0 +1,138 @@
+{
+    "Deadpool & Wolverine": {
+        "Title": "Deadpool & Wolverine",
+        "Img": "assets/movies/deadpool_wolverine.jpg",
+        "Text": "Deadpool and Wolverine team up in a chaotic adventure full of action, humor, and meta-commentary. As they face formidable enemies and their own complex pasts, the two anti-heroes must navigate a perilous journey filled with unexpected twists.",
+        "Date": "July 26, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Despicable Me 4": {
+        "Title": "Despicable Me 4",
+        "Img": "assets/movies/despicable_me_4.jpg",
+        "Text": "Gru and the Minions are back in another mischievous adventure. This time, they face a new supervillain threat that could change the world as they know it. Gru must team up with unexpected allies to save the day.",
+        "Date": "July 3, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Twisters": {
+        "Title": "Twisters",
+        "Img": "assets/movies/twisters.jpg",
+        "Text": "A thrilling sequel to the 1996 classic 'Twister,' this film follows a new generation of storm chasers as they face increasingly violent tornadoes. With cutting-edge technology and personal stakes on the line, the team must confront nature's fury head-on.",
+        "Date": "July 19, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Kung Fu Panda 4": {
+        "Title": "Kung Fu Panda 4",
+        "Img": "assets/movies/kung_fu_panda_4.jpg",
+        "Text": "Po returns for another epic adventure in the Valley of Peace. This time, he must master a new form of Kung Fu to defeat a powerful enemy threatening to destroy everything he loves. Along the way, Po learns important lessons about friendship, loyalty, and self-discovery.",
+        "Date": "March 8, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Godzilla x Kong: The New Empire": {
+        "Title": "Godzilla x Kong: The New Empire",
+        "Img": "assets/movies/godzilla_x_kong.jpg",
+        "Text": "In this thrilling sequel, Godzilla and King Kong must set aside their differences to face a new and even more dangerous threat. As they join forces, they uncover hidden secrets about their ancient origins and the true nature of the monsters that inhabit their world.",
+        "Date": "March 29, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Rebel Moon: Part II": {
+        "Title": "Rebel Moon: Part II",
+        "Img": "assets/movies/rebel_moon_part_2.jpg",
+        "Text": "Continuing the saga from the first 'Rebel Moon,' this film delves deeper into the intergalactic conflict as the rebel forces prepare for an all-out war against an oppressive regime. With new allies and old enemies, the stakes have never been higher.",
+        "Date": "April 19, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Furiosa": {
+        "Title": "Furiosa",
+        "Img": "assets/movies/furiosa.jpg",
+        "Text": "A prequel to 'Mad Max: Fury Road,' this film tells the origin story of the fierce warrior Furiosa. Set in a post-apocalyptic world, it explores her rise to power and the brutal trials she faces as she navigates the wasteland.",
+        "Date": "May 24, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Bad Boys 4": {
+        "Title": "Bad Boys 4",
+        "Img": "assets/movies/bad_boys_4.jpg",
+        "Text": "Mike Lowrey and Marcus Burnett are back for more high-octane action in this latest installment of the 'Bad Boys' franchise. The duo faces their most dangerous mission yet, as they take on a powerful criminal organization with ties to their past.",
+        "Date": "June 7, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Inside Out 2": {
+        "Title": "Inside Out 2",
+        "Img": "assets/movies/inside_out_2.jpg",
+        "Text": "In this highly anticipated sequel, Riley is now a teenager, and her emotions are more complex than ever. Joy, Sadness, and the rest of the gang return to help her navigate the challenges of adolescence, with new emotions joining the mix.",
+        "Date": "June 14, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Ghostbusters: Frozen Empire": {
+        "Title": "Ghostbusters: Frozen Empire",
+        "Img": "assets/movies/ghostbusters_frozen_empire.jpg",
+        "Text": "The Ghostbusters team faces a chilling new threat as a supernatural ice age descends upon the city. With the help of old and new allies, they must unravel the mystery behind this icy phenomenon before the world is frozen forever.",
+        "Date": "March 22, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Madame Web": {
+        "Title": "Madame Web",
+        "Img": "assets/movies/madame_web.jpg",
+        "Text": "This Spider-Man spinoff follows the story of Madame Web, a mysterious clairvoyant with the ability to see into the future. As she uncovers a plot that threatens the multiverse, she must assemble a team of heroes to prevent a catastrophe.",
+        "Date": "February 14, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Argylle": {
+        "Title": "Argylle",
+        "Img": "assets/movies/argylle.jpg",
+        "Text": "A globe-trotting spy thriller that follows the adventures of Argylle, the world's greatest secret agent, as he uncovers a conspiracy that could change the course of history.",
+        "Date": "February 2, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Dune: Part Two": {
+        "Title": "Dune: Part Two",
+        "Img": "assets/movies/dune_part_two.jpg",
+        "Text": "The epic saga continues as Paul Atreides seeks vengeance against those who destroyed his family. With the help of Chani and the Fremen, he embarks on a journey that will lead him to become the prophesied ruler of Arrakis.",
+        "Date": "March 8, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Kingdom of the Planet of the Apes": {
+        "Title": "Kingdom of the Planet of the Apes",
+        "Img": "assets/movies/kingdom_of_the_apes.jpg",
+        "Text": "In this latest chapter of the 'Planet of the Apes' saga, the apes continue to build their civilization while facing new challenges from human survivors and rival ape factions. The struggle for dominance and survival reaches a new level of intensity.",
+        "Date": "May 10, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "The Fall Guy": {
+        "Title": "The Fall Guy",
+        "Img": "assets/movies/the_fall_guy.jpg",
+        "Text": "A reimagining of the classic TV series, this film follows a Hollywood stuntman who moonlights as a bounty hunter. When a job goes wrong, he finds himself caught in a dangerous conspiracy that puts his skills and his life to the ultimate test.",
+        "Date": "May 3, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "Harold and the Purple Crayon": {
+        "Title": "Harold and the Purple Crayon",
+        "Img": "assets/movies/harold_purple_crayon.jpg",
+        "Text": "Based on the beloved children's book, this film follows the imaginative adventures of Harold, a young boy who can bring his drawings to life with his magical purple crayon. As he explores fantastical worlds, he learns important lessons about creativity and self-expression.",
+        "Date": "August 2, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    },
+    "A Quiet Place: Day One": {
+        "Title": "A Quiet Place: Day One",
+        "Img": "assets/movies/a_quiet_place_day_one.jpg",
+        "Text": "A prequel to 'A Quiet Place,' this film explores the terrifying first days of the alien invasion that decimated humanity. As a group of survivors struggles to adapt to the new, silent world, they must face unimaginable horrors to stay alive.",
+        "Date": "June 28, 2024",
+        "Type": "Movie",
+        "Duration": "TBD"
+    }
+}

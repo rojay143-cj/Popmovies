@@ -104,17 +104,39 @@ class MovieController extends Controller
 
         $fetcheditmovie = DB::table('movie')
         ->join('moviegenre','movie.movie_id','=','moviegenre.movie_id')
-        ->join('genre', 'moviegenre.genre_id', '=', 'genre.genre_id')
-        ->where('movie.movie_id',$movie_id)
-        ->select('genre.*','moviegenre.genre_id')
-        ->select('movie.*','moviegenre.genre_id')
+        ->leftJoin('genre','moviegenre.genre_id','=','genre.genre_id')
+        ->join('moviecountry','movie.movie_id','=','moviecountry.movie_id')
+        ->leftJoin('country','moviecountry.country_id','=','country.country_id')
+        ->join('moviecast','movie.movie_id','=','moviecast.movie_id')
+        ->leftJoin('cast','moviecast.cast_id','=','cast.cast_id')
+        ->where('moviegenre.movie_id', $movie_id)
         ->get();
 
         $result = [
             'movie' => $fetcheditmovie->first(),
-            'genres' => $fetcheditmovie->pluck('genre_name')
+            'genres' => $fetcheditmovie->pluck('genre_name')->unique()->values(),
+            'countries' => $fetcheditmovie->pluck('country_name')->unique()->values(),
+            'casts' => $fetcheditmovie->pluck('cast_name')->unique()->values(),
         ];
         return $result;
+    }
+    
+    public function EditMovie(Request $request){
+        $categories = json_decode($request->input('categorizeGCP'), true);
+
+        $genres = $categories['genres'];
+        $country = $categories['country'];
+        $cast = $categories['cast'];
+
+        $form = [
+            'title' => $request->title,
+            'type' => $request->type,
+            'release_date' => $request->release_date,
+            'description' => $request->description,
+            'rt_score' => $request->rt_score,
+            'testing_lang' => $categories
+        ];
+        return $form;
     }
 
     function DeleteMovie(Request $request){

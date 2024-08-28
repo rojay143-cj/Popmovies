@@ -75,7 +75,7 @@
                     </div>
                     <div class="mb-2">
                         <label for="release_date" class="block mb-1">Release Date</label>
-                        <input type="date" id="release_date" name="release_date" value="{{ old('release_date') }}"
+                        <input type="date" id="release_date" name="release_date"
                             class="w-full px-3 py-2 bg-stone-800 text-gray-200 border border-stone-600 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
                     </div>
                 </div>
@@ -177,9 +177,10 @@
                     </div>
                     <div class="mb-2">
                         <label for="release_date" class="block mb-1">Release Date</label>
-                        <input type="date" id="release_date" name="release_date" value="{{ old('release_date') }}"
+                        <input type="date" id="release_date" name="release_date"
                             class="w-full px-3 py-2 bg-stone-800 text-gray-200 border border-stone-600 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
                     </div>
+
                 </div>
                 <div class="mb-2">
                     <label for="description" class="block mb-1">Description</label>
@@ -203,7 +204,7 @@
                         class="close-edit-modal px-4 py-2 bg-gray-600 text-sm text-gray-200 rounded hover:bg-gray-500 focus:outline-none">
                         Cancel
                     </button>
-                    <button type="button" id="btn_save" name="save_movie"
+                    <button type="button" id="btn_save_edit" name="save_movie"
                         class="btn-save px-4 py-2 bg-yellow-700 text-sm text-gray-200 rounded hover:bg-yellow-600 focus:outline-none">
                         Save
                     </button>

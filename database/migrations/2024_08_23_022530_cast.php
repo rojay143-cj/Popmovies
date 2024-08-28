@@ -17,6 +17,56 @@ return new class extends Migration
             $table->string('cast_name')->unique();
             $table->timestamps();
         });
+        DB::table('cast')->insert([
+            [
+                'position' => 'Direct',
+                'cast_name' => 'Christopher Nolan'
+            ],
+            [
+                'position' => 'Lead Actor',
+                'cast_name' => 'Leonardo DiCarpio'
+            ],
+            [
+                'position' => 'Supporting Actress',
+                'cast_name' => 'Anne Hathaway'
+            ],
+            [
+                'position' => 'Director',
+                'cast_name' => 'Steve Spielberg'
+            ],
+            [
+                'position' => 'Lead Actor',
+                'cast_name' => 'Sam Neill'
+            ],
+            [
+                'position' => 'Lead Actor',
+                'cast_name' => 'Henry Thomas'
+            ],
+            [
+                'position' => 'Lead Actres',
+                'cast_name' => 'Uma Thurman'
+            ],
+            [
+                'position' => 'Lead Actor',
+                'cast_name' => 'John Travolta'
+            ],
+            [
+                'position' => 'Lead Actor',
+                'cast_name' => 'Jamie Foxx'
+            ],
+            [
+                'position' => 'Lead Actor',
+                'cast_name' => 'Liam Neeson'
+            ],
+            [
+                'position' => 'Lead Actor',
+                'cast_name' => 'Christian Bale'
+            ],
+            [
+                'position' => 'Director',
+                'cast_name' => 'Quentin Tarantino'
+            ],
+        ]);
     }
 
     /**

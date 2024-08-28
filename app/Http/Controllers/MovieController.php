@@ -95,7 +95,15 @@ class MovieController extends Controller
             movie_genre($genreIds, $movieId);
             movie_country($countryIds, $movieId);
             movie_cast($teamIds, $movieId);
-            return "A new movie { $movie->title } has been added successfully.";
+            if($movie){
+                return response()->json([
+                    'message' => "A new movie { $movie->title } has been added successfully."
+                ]);
+            }
+        }else{
+            return response()->json([
+                'message' => "Failed to add the movie please try again."
+            ]);
         }
     }
 
@@ -124,19 +132,34 @@ class MovieController extends Controller
     public function EditMovie(Request $request){
         $categories = json_decode($request->input('categorizeGCP'), true);
 
-        $genres = $categories['genres'];
-        $country = $categories['country'];
-        $cast = $categories['cast'];
+        $form = $request->validate([
+            'title' => 'nullable|string|min:3|unique:movie,title',
+            'type' => 'nullable|string|min:3',
+            'release_date' => 'nullable|date',
+            'description' => 'nullable|string|min:3',
+            'rt_score' => 'nullable|int|min:1'
+        ]);
+        
+        $data = array_filter($form, function($value){
+            return $value !== null && $value !== '';
+        });
 
-        $form = [
-            'title' => $request->title,
-            'type' => $request->type,
-            'release_date' => $request->release_date,
-            'description' => $request->description,
-            'rt_score' => $request->rt_score,
-            'testing_lang' => $categories
-        ];
-        return $form;
+        if(empty($data)){
+            return response()->json([
+               'message' => 'Failed to update the movie'
+            ]);
+        }else{
+            $edit_movie = DB::table('movie')->where('movie_id',$categories['movie_id'])->update($data);
+            if($edit_movie){
+                return response()->json([
+                    'message' => 'Movie modified successfully'
+                ]);
+            }else{
+                return response()->json([
+                    'message' => 'No changes made to ' . $categories['movie_title']
+                ]);
+            }
+        }
     }
 
     function DeleteMovie(Request $request){

@@ -13,6 +13,7 @@ $(document).ready(function () {
     setTimeout(function () {
         $(".alert").slideUp(200);
     }, 3000);
+    
 });
 $(function () {
     $(".setting").on("click", function (e) {
@@ -304,7 +305,14 @@ $(document).ready(function () {
     };
 
     // Function to add item to GCP and handle duplicates - CJ
-    function handleAdd(item_name, bgColor, textColor, category, clear, btnexit) {
+    function handleAdd(
+        item_name,
+        bgColor,
+        textColor,
+        category,
+        clear,
+        btnexit
+    ) {
         if (!categorizeGCP[category].has(item_name)) {
             GCP.append(
                 `<p title="${category}" class="item p-1 relative ${bgColor} shadow-sm ${textColor}" style="position: relative; padding-right: 20px;">
@@ -329,9 +337,9 @@ $(document).ready(function () {
         });
     }
     // Function to clear all categories when clicking the exit button of the modal ;)
-    function clearAllCategories(){
-        for(const category in categorizeGCP){
-            if(categorizeGCP.hasOwnProperty(category)){
+    function clearAllCategories() {
+        for (const category in categorizeGCP) {
+            if (categorizeGCP.hasOwnProperty(category)) {
                 categorizeGCP[category].clear();
             }
         }
@@ -404,7 +412,7 @@ $(document).ready(function () {
             data: formData,
             success: function (response) {
                 deleteMovie();
-                $(".success").text(response).show();
+                $(".success").text(response.message).show();
                 getMovies();
             },
             error: function (error) {
@@ -461,61 +469,106 @@ $(document).ready(function () {
         let movie_id = $(this).val();
         let movie_title = $(this).data("title");
         $.ajax({
-            url: '/Pop Admin Panel/fetchedittomovie',
-            method: 'POST',
-            data: {movie_id},
-            success: function(response){
-                $('.modal-title').text(movie_title);
-                $('.modal-edit_movie').fadeIn(200);
-                $.each(response.genres, function (key, genre) { 
-                    GCP.append(handleAdd(genre, "bg-red-600", "text-slate-300", "genre", '<i class="fa-solid fa-minus fa-xl"></i>'));
+            url: "/Pop Admin Panel/fetchedittomovie",
+            method: "POST",
+            data: { movie_id },
+            success: function (response) {
+                $(".modal-title").text(movie_title);
+                $(".modal-edit_movie")
+                    .fadeIn(200)
+                    .data("Movie-ID", movie_id)
+                    .attr("title", movie_title);
+                $.each(response.genres, function (key, genre) {
+                    GCP.append(
+                        handleAdd(
+                            genre,
+                            "bg-red-600",
+                            "text-slate-300",
+                            "genre",
+                            '<i class="fa-solid fa-minus fa-xl"></i>'
+                        )
+                    );
                 });
-                $.each(response.countries, function (key, country) { 
-                    GCP.append(handleAdd(country, "bg-yellow-600", "text-slate-300", "country", '<i class="fa-solid fa-minus fa-xl"></i>'));
+                $.each(response.countries, function (key, country) {
+                    GCP.append(
+                        handleAdd(
+                            country,
+                            "bg-yellow-600",
+                            "text-slate-300",
+                            "country",
+                            '<i class="fa-solid fa-minus fa-xl"></i>'
+                        )
+                    );
                 });
-                $.each(response.casts, function (key, cast) { 
-                    GCP.append(handleAdd(cast, "bg-gray-300", "text-stone-800", "team", '<i class="fa-solid fa-minus fa-xl"></i>'));
+                $.each(response.casts, function (key, cast) {
+                    GCP.append(
+                        handleAdd(
+                            cast,
+                            "bg-gray-300",
+                            "text-stone-800",
+                            "team",
+                            '<i class="fa-solid fa-minus fa-xl"></i>'
+                        )
+                    );
                 });
             },
-            error: function(jqXHR){
+            error: function (jqXHR) {
                 console.log(jqXHR);
-            }
-        });
-    });
-    
-    // Send GCP data for editing
-    $(document).on('click', '#btn_save',function (){
-        let DataToSend = {
-            'genres': Array.from(categorizeGCP.genre),
-            'country': Array.from(categorizeGCP.country),
-            'cast': Array.from(categorizeGCP.team),
-        };
-        let formedit = $('#EditForm')[0];
-        let edit_form_data = new FormData(formedit);
-
-        edit_form_data.append('categorizeGCP',JSON.stringify(DataToSend));
-        $.ajax({
-            url: '/Pop Admin Panel/EditMovie',
-            method: 'POST',
-            contentType: false,
-            processData: false,
-            data: edit_form_data,
-            success: function(response){
-                console.log('Success:',response);
             },
-            error: function(error){
-                console.log('Error: ',error);
-            }
         });
     });
 
-    $('.close-edit-modal').on('click',function (e) {
+    // Send GCP & Form data for editing
+    $(document).on("click", "#btn_save_edit", function () {
+        var message = "";
+        let DataToSend = {
+            genres: Array.from(categorizeGCP.genre),
+            country: Array.from(categorizeGCP.country),
+            cast: Array.from(categorizeGCP.team),
+            movie_id: $(".modal-edit_movie").data("Movie-ID"),
+            movie_title: $(".modal-edit_movie").attr("title"),
+        };
+        if (
+            !DataToSend.genres.length ||
+            !DataToSend.country.length ||
+            !DataToSend.cast.length ||
+            !DataToSend.movie_id ||
+            !DataToSend.movie_title
+        ) {
+            $('.error').text('Please select the designated (Genre, Production Team, and Country) for this movie').show();
+        } else {
+            let formedit = $("#EditForm")[0];
+            let edit_form_data = new FormData(formedit);
+            edit_form_data.append("categorizeGCP", JSON.stringify(DataToSend));
+
+            $.ajax({
+                url: "/Pop Admin Panel/EditMovie",
+                method: "POST",
+                contentType: false,
+                processData: false,
+                data: edit_form_data,
+                success: function (response) {
+                    getMovies();
+
+                    message = response.message || "Unexpected error occurred";
+                    $(".success").text(message).show();
+                },
+                error: function (error) {
+                    message =
+                        error.responseJSON?.message ||
+                        "Unexpected error occurred";
+                    $(".error").text(message).show();
+                },
+            });
+        }
+    });
+
+    $(".close-edit-modal").on("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
         clearAllCategories();
-        $('.modal-edit_movie').fadeOut(200);
-        
-     });
+        $(".modal-edit_movie").fadeOut(200);
+    });
 
     // Append movie's modal delete when Clicked popmovies - CJ
     $(document).on("click", ".btn-delete_movie", function (e) {

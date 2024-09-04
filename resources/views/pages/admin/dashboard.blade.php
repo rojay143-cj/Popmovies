@@ -7,5 +7,6 @@
     @include('pages.admin.components.country', ['countries' => $countries])
     @include('pages.admin.components.genre', ['genres' => $genres])
     @include('pages.admin.components.movie', [['genres' => $genres], ['countries' => $countries], ['cast' => $cast]])
+    @include('pages.admin.components.uploads',['movies' => $movies])
 </div>
 @endsection

@@ -11,6 +11,7 @@ class AdminController extends Controller
         $cast = DB::table('cast')->get();
         $countries = DB::table('country')->get();
         $genres = DB::table('genre')->get();
-        return view('pages.admin.dashboard', compact('cast','countries','genres'));
+        $movies = DB::table('movie')->get();
+        return view('pages.admin.dashboard', compact('cast','countries','genres','movies'));
     }
 }

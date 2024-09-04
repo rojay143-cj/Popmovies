@@ -39,105 +39,47 @@ $(function () {
     });
 });
 
-// SIDE-BAR OPTIONS - CJ
 $(document).ready(function () {
-    var TEAM = localStorage.getItem("TEAM") === "true";
-    var COUNTRY = localStorage.getItem("COUNTRY") === "true";
-    var GENRE = localStorage.getItem("GENRE") === "true";
-    var MOVIE = localStorage.getItem("MOVIE") === "true";
+    function toggleSection(section) {
+        $(".TEAM, .COUNTRY, .GENRE, .MOVIE, .UPLOAD").hide();
+        localStorage.setItem("TEAM", "false");
+        localStorage.setItem("COUNTRY", "false");
+        localStorage.setItem("GENRE", "false");
+        localStorage.setItem("MOVIE", "false");
+        localStorage.setItem("UPLOAD", "false");
 
-    if (COUNTRY) {
-        $(".COUNTRY").show();
-    } else {
-        $(".COUNTRY").hide();
+        if (section) {
+            $(section).toggle();
+            localStorage.setItem(section.slice(1).toUpperCase(), $(section).is(":visible"));
+        }
     }
-
-    if (TEAM) {
-        $(".TEAM").show();
-    } else {
-        $(".TEAM").hide();
-    }
-
-    if (GENRE) {
-        $(".GENRE").show();
-    } else {
-        $(".GENRE").hide();
-    }
-    if (MOVIE) {
-        $(".MOVIE").show();
-    } else {
-        $(".MOVIE").hide();
-    }
+    $(".TEAM").toggle(localStorage.getItem("TEAM") === "true");
+    $(".COUNTRY").toggle(localStorage.getItem("COUNTRY") === "true");
+    $(".GENRE").toggle(localStorage.getItem("GENRE") === "true");
+    $(".MOVIE").toggle(localStorage.getItem("MOVIE") === "true");
+    $(".UPLOAD").toggle(localStorage.getItem("UPLOAD") === "true");
 
     $("#COUNTRY").on("click", function () {
-        $(".TEAM").hide();
-        localStorage.setItem("TEAM", "false");
-        $(".GENRE").hide();
-        localStorage.setItem("GENRE", "false");
-        $(".MOVIE").hide();
-        localStorage.setItem("MOVIE", "false");
-        $(".COUNTRY").each(function () {
-            if ($(this).is(":visible")) {
-                $(this).hide();
-                localStorage.setItem("COUNTRY", "false");
-            } else {
-                $(this).show();
-                localStorage.setItem("COUNTRY", "true");
-            }
-        });
+        toggleSection(".COUNTRY");
     });
+
     $("#PRODUCTION").on("click", function () {
-        $(".COUNTRY").hide();
-        localStorage.setItem("COUNTRY", "false");
-        $(".GENRE").hide();
-        localStorage.setItem("GENRE", "false");
-        $(".MOVIE").hide();
-        localStorage.setItem("MOVIE", "false");
-        $(".TEAM").each(function () {
-            if ($(this).is(":visible")) {
-                $(this).hide();
-                localStorage.setItem("TEAM", "false");
-            } else {
-                $(this).show();
-                localStorage.setItem("TEAM", "true");
-            }
-        });
+        toggleSection(".TEAM");
     });
+
     $("#GENRE").on("click", function () {
-        $(".TEAM").hide();
-        localStorage.setItem("TEAM", "false");
-        $(".COUNTRY").hide();
-        localStorage.setItem("COUNTRY", "false");
-        $(".MOVIE").hide();
-        localStorage.setItem("MOVIE", "false");
-        $(".GENRE").each(function () {
-            if ($(this).is(":visible")) {
-                $(this).hide();
-                localStorage.setItem("GENRE", "false");
-            } else {
-                $(this).show();
-                localStorage.setItem("GENRE", "true");
-            }
-        });
+        toggleSection(".GENRE");
     });
+
     $("#MOVIE").on("click", function () {
-        $(".TEAM").hide();
-        localStorage.setItem("TEAM", "false");
-        $(".COUNTRY").hide();
-        localStorage.setItem("COUNTRY", "false");
-        $(".GENRE").hide();
-        localStorage.setItem("GENRE", "false");
-        $(".MOVIE").each(function () {
-            if ($(this).is(":visible")) {
-                $(this).hide();
-                localStorage.setItem("MOVIE", "false");
-            } else {
-                $(this).show();
-                localStorage.setItem("MOVIE", "true");
-            }
-        });
+        toggleSection(".MOVIE");
+    });
+
+    $('#UPLOAD').on('click', function () {
+        toggleSection(".UPLOAD");
     });
 });
+
 
 // Add Production Modal - CJ
 $(function () {
@@ -412,14 +354,14 @@ $(document).ready(function () {
             data: formData,
             success: function (response) {
                 deleteMovie();
-                $(".success").text(response.message).show();
+                $(".alert-success").text(response.message).show();
                 getMovies();
             },
             error: function (error) {
                 let errorMessage =
                     error.responseJSON?.message ||
                     "An unexpected error occured.";
-                $(".error").text(errorMessage).show();
+                $(".alert-error").text(errorMessage).show();
             },
         });
     });
@@ -640,5 +582,34 @@ $(document).ready(function () {
 
     $(document).on("click", ".close-deletemodal", function () {
         deleteModal($("#delete_movies"));
+    });
+
+    $('#btn_upload').on('click',function(){
+        let form = $('#upload_form')[0];
+        let UploadsData = new FormData(form);
+        $.ajax({
+            url: '/Pop Admin Panel/upload movie',
+            method: 'post',
+            contentType: false,
+            processData: false,
+            data: UploadsData,
+            success: function (response) { 
+                getMovies();
+                message = response.message || "Unexpected error occurred";
+                console.log(message);
+                var $success = $(".alert-success").text(message).parent().show();
+                setTimeout(() => {
+                    $success.slideUp();
+                }, 1700);
+             },
+            error: function (error) { 
+                message = error.responseJSON?.message || "Unexpected error occured";
+                var $error = $(".alert-error").text(message).parent().show();
+                setTimeout(() => {
+                    $error.slideUp();
+                }, 1700);
+                
+            }
+        });
     });
 });

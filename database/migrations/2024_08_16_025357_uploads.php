@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('uploads', function (Blueprint $table) {
             $table->id('upload_id')->index();
-            $table->foreignId('movie_id');
+            $table->foreignId('movie_id')->references('movie_id')->on('movie')->onDelete('cascade');
             $table->string('poster_url');
             $table->string('trailer_url');
             $table->string('video_url');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

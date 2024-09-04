@@ -7,6 +7,7 @@ use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProductionController;
+use App\Http\Controllers\UploadsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -43,4 +44,7 @@ Route::group(['middleware' => 'check_login'], function () {
     Route::post('/Pop Admin Panel/AddMovie', [MovieController::class, 'MoviePost'])->name('Add_Movie');
     Route::post('/Pop Admin Panel/EditMovie', [MovieController::class, 'EditMovie'])->name('Edit_Movie');
     Route::post('/Pop Admin Panel/DeleteMovie', [MovieController::class, 'DeleteMovie'])->name('Delete_Movie');
+
+    // Upload Routes
+    Route::post('/Pop Admin Panel/upload movie',[UploadsController::class, 'Upload_Post'])->name('UploadPost');
 });

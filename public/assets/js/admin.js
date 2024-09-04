@@ -375,27 +375,38 @@ $(document).ready(function () {
             success: function (response) {
                 let table = $("#movie").DataTable();
                 table.clear();
-                $.each(response.movies, function (key, movie) {
-                    table.row.add([
-                        `<td class="px-4 py-2 hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">
-                        <img src="${movie.poster_url}" alt="${movie.title}" class="rounded-sm object-cover w-20 h-28">
-                    </td>`,
-                        `<td class="py-2 px-1 hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">${movie.title}</td>`,
-                        `<td class="py-2 px-1 hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">${movie.type}</td>`,
-                        `<td class="py-2 px-1 hover:bg-stone-900 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">${movie.release_date}</td>`,
-                        `<td class="py-2 px-1 hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">${movie.rt_score}</td>`,
-                        `<td class="p-2 px-1 text-center hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-b border-stone-600">
-                        <button type="button" value="${movie.movie_id}" data-title="${movie.title}" class="btn-edit_movie text-yellow-600 hover:text-yellow-500">
-                            <i class="fa-regular fa-pen-to-square"></i>
-                        </button>
-                        <button type="button" value="${movie.movie_id}" data-title="${movie.title}" class="btn-delete_movie text-red-500 hover:text-red-700 ml-2">
-                            <i class="fa-regular fa-trash-can"></i>
-                        </button>
-                    </td>`,
-                    ]);
-                });
+                $('#movieId').empty();
+                if (response.movies.length > 0) {
+                    $.each(response.movies, function (key, movie) {
+                        table.row.add([
+                            `<td class="px-4 py-2 hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">
+                                <img src="${movie.poster_url}" alt="${movie.title}" class="rounded-sm object-cover w-20 h-28">
+                            </td>`,
+                            `<td class="py-2 px-1 hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">${movie.title}</td>`,
+                            `<td class="py-2 px-1 hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">${movie.type}</td>`,
+                            `<td class="py-2 px-1 hover:bg-stone-900 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">${movie.release_date}</td>`,
+                            `<td class="py-2 px-1 hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-r border-b border-stone-600">${movie.rt_score}</td>`,
+                            `<td class="p-2 px-1 text-center hover:bg-stone-600 hover:bg-opacity-30 cursor-pointer border-b border-stone-600">
+                                <button type="button" value="${movie.movie_id}" data-title="${movie.title}" class="btn-edit_movie text-yellow-600 hover:text-yellow-500">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                </button>
+                                <button type="button" value="${movie.movie_id}" data-title="${movie.title}" class="btn-delete_movie text-red-500 hover:text-red-700 ml-2">
+                                    <i class="fa-regular fa-trash-can"></i>
+                                </button>
+                            </td>`,
+                        ]);
+                        $('#movieId').append(`
+                            <option value="${movie.movie_id}">${movie.title}</option>
+                        `);
+                    });
+                } else {
+                    $('#movieId').append(`
+                        <option value="" disabled>No movie available</option>
+                    `);
+                }
+    
                 table.draw();
-            },
+            },    
             error: function (error) {
                 let errorMessage =
                     error.responseJSON?.message ||
@@ -607,7 +618,7 @@ $(document).ready(function () {
                 var $error = $(".alert-error").text(message).parent().show();
                 setTimeout(() => {
                     $error.slideUp();
-                }, 1700);
+                }, 2500);
                 
             }
         });

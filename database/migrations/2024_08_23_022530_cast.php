@@ -19,7 +19,7 @@ return new class extends Migration
         });
         DB::table('cast')->insert([
             [
-                'position' => 'Direct',
+                'position' => 'Director',
                 'cast_name' => 'Christopher Nolan'
             ],
             [

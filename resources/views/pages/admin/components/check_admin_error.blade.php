@@ -1,4 +1,4 @@
-<section class="check_error absolute bottom-10">
+<section class="check_error absolute bottom-10 z-50">
     <div class="flex justify-center items-center mt-10">
         <div class="success flex items-center gap-3 p-2" style="display: none">
             <span class="pl-2"><i class="fa-solid fa-volume-high text-green-700 text-lg"></i></span>

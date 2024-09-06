@@ -13,7 +13,6 @@ $(document).ready(function () {
     setTimeout(function () {
         $(".alert").slideUp(200);
     }, 3000);
-    
 });
 $(function () {
     $(".setting").on("click", function (e) {
@@ -50,7 +49,10 @@ $(document).ready(function () {
 
         if (section) {
             $(section).toggle();
-            localStorage.setItem(section.slice(1).toUpperCase(), $(section).is(":visible"));
+            localStorage.setItem(
+                section.slice(1).toUpperCase(),
+                $(section).is(":visible")
+            );
         }
     }
     $(".TEAM").toggle(localStorage.getItem("TEAM") === "true");
@@ -75,11 +77,10 @@ $(document).ready(function () {
         toggleSection(".MOVIE");
     });
 
-    $('#UPLOAD').on('click', function () {
+    $("#UPLOAD").on("click", function () {
         toggleSection(".UPLOAD");
     });
 });
-
 
 // Add Production Modal - CJ
 $(function () {
@@ -375,7 +376,7 @@ $(document).ready(function () {
             success: function (response) {
                 let table = $("#movie").DataTable();
                 table.clear();
-                $('#movieId').empty();
+                $("#movieId").empty();
                 if (response.movies.length > 0) {
                     $.each(response.movies, function (key, movie) {
                         table.row.add([
@@ -395,18 +396,18 @@ $(document).ready(function () {
                                 </button>
                             </td>`,
                         ]);
-                        $('#movieId').append(`
+                        $("#movieId").append(`
                             <option value="${movie.movie_id}">${movie.title}</option>
                         `);
                     });
                 } else {
-                    $('#movieId').append(`
+                    $("#movieId").append(`
                         <option value="" disabled>No movie available</option>
                     `);
                 }
-    
+
                 table.draw();
-            },    
+            },
             error: function (error) {
                 let errorMessage =
                     error.responseJSON?.message ||
@@ -488,7 +489,11 @@ $(document).ready(function () {
             !DataToSend.movie_id ||
             !DataToSend.movie_title
         ) {
-            $('.error').text('Please select the designated (Genre, Production Team, and Country) for this movie').show();
+            $(".error")
+                .text(
+                    "Please select the designated (Genre, Production Team, and Country) for this movie"
+                )
+                .show();
         } else {
             let formedit = $("#EditForm")[0];
             let edit_form_data = new FormData(formedit);
@@ -595,32 +600,73 @@ $(document).ready(function () {
         deleteModal($("#delete_movies"));
     });
 
-    $('#btn_upload').on('click',function(){
-        let form = $('#upload_form')[0];
+    $("#btn_upload").on("click", function () {
+        let form = $("#upload_form")[0];
         let UploadsData = new FormData(form);
-        $.ajax({
-            url: '/Pop Admin Panel/upload movie',
-            method: 'post',
-            contentType: false,
-            processData: false,
-            data: UploadsData,
-            success: function (response) { 
-                getMovies();
-                message = response.message || "Unexpected error occurred";
-                console.log(message);
-                var $success = $(".alert-success").text(message).parent().show();
-                setTimeout(() => {
-                    $success.slideUp();
-                }, 1700);
-             },
-            error: function (error) { 
-                message = error.responseJSON?.message || "Unexpected error occured";
-                var $error = $(".alert-error").text(message).parent().show();
-                setTimeout(() => {
-                    $error.slideUp();
-                }, 2500);
-                
-            }
+        $("#Links_Confirmation")
+            .slideDown()
+            .fadeIn()
+            .addClass("bg-opacity-50 bg-black");
+        let movieName = $("#movieId option:selected").text();
+        let movieID = UploadsData.get("movie_id");
+        let posterLink = UploadsData.get("poster_url");
+        let trailerLink = UploadsData.get("trailer_url");
+        let MovieLink = UploadsData.get("video_url");
+        let uploadData = {
+            movie_id: movieID,
+            poster_url: posterLink,
+            trailer_url: trailerLink,
+            video_url: MovieLink,
+        };
+        $(".movieLinks").empty().append(`
+            <li>Movie Name: <span class="text-yellow-600 tracking-wider">${movieName}</span></li>
+            <li>Poster URL: <a href="${posterLink}" target="_blank" class="underline text-xs text-blue-500">${posterLink}</a></li>
+            <li>Trailer URL: <a href="${trailerLink}" target="_blank" class="underline text-xs text-blue-500">${trailerLink}</a></li>
+            <li>Movie URL: <a href="${MovieLink}" target="_blank" class="underline text-xs text-blue-500">${MovieLink}</a></li>
+        `);
+
+        $("#btn_confirm_links").off('click').on("click", function () {
+            $.ajax({
+                url: "/Pop Admin Panel/upload movie",
+                method: "post",
+                data: JSON.stringify(uploadData),
+                contentType: "application/json",
+                success: function (response) {
+                    getMovies();
+                    message = response.success || "Unexpected error occurred";
+                    var $success = $(".alert-success")
+                        .text(message)
+                        .parent()
+                        .show();
+                    $("#Links_Confirmation")
+                        .slideUp()
+                        .fadeOut()
+                        .removeClass("bg-opacity-50 bg-black");
+                    setTimeout(() => {
+                        $success.slideUp();
+                    }, 1700);
+                    $("#upload_form")[0].reset();
+                    return false;
+                },
+                error: function (error) {
+                    message =
+                        error.responseJSON?.message ||
+                        "Unexpected error occured";
+                    var $error = $(".alert-error")
+                        .text(message)
+                        .parent()
+                        .show();
+                    setTimeout(() => {
+                        $error.slideUp();
+                    }, 2500);
+                },
+            });
+        });
+        $("#btn_cancel_confirm").on("click", function () {
+            $("#Links_Confirmation")
+                .slideUp()
+                .fadeOut()
+                .removeClass("bg-opacity-50 bg-black");
         });
     });
 });
